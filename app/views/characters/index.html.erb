@@ -90,7 +90,7 @@
         </td>
 
         <td>
-          <%= a_character.actor_id %>
+          <%= Actor.where({ :id => a_character.actor_id}).at(0).name %>
         </td>
 
         <td>

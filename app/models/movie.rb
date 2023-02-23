@@ -13,4 +13,6 @@
 #  director_id :integer
 #
 class Movie < ApplicationRecord
+  has_many(:actors, { :class_name => "Actor", :foreign_key => "movie_id", :dependent => :destroy })
+  belongs_to(:director, { :required => true, :class_name => "Director", :foreign_key => "director_id" })
 end
